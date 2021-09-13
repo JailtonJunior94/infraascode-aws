@@ -19,17 +19,3 @@ provider "aws" {
   region  = var.region
   profile = var.profile
 }
-
-data "aws_caller_identity" "current" {}
-
-resource "aws_s3_bucket" "remote_state" {
-  bucket = "storageterraformjj"
-
-  versioning {
-    enabled = true
-  }
-
-  tags = {
-    "Owner" = "Jailton Junior"
-  }
-}
